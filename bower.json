@@ -1,0 +1,21 @@
+{
+  "name": "webres-crime",
+  "description": "A JS Model for Crimes",
+  "main": "index.js",
+  "license": "ISC",
+  "homepage": "https://github.com/dylanrhysscott/webres-crime",
+  "moduleType": [
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "views/assets",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5"
+  }
+}

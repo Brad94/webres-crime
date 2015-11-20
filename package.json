@@ -1,0 +1,23 @@
+{
+  "name": "webres-crime",
+  "version": "1.0.0",
+  "description": "A JS Model for Crimes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dylanrhysscott/webres-crime.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dylanrhysscott/webres-crime/issues"
+  },
+  "homepage": "https://github.com/dylanrhysscott/webres-crime#readme",
+  "dependencies": {
+    "express": "^4.13.3",
+    "mongoose": "^4.2.6"
+  }
+}
