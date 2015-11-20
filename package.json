@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/dylanrhysscott/webres-crime#readme",
   "dependencies": {
+    "exphbs": "^1.0.1",
     "express": "^4.13.3",
     "fs": "0.0.2"
   }
