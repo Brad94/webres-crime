@@ -3,81 +3,81 @@
     {
     	"city":"portsmouth",
     	"coords":["50.816667, -1.083333"],
-        "crimes": [
-        	{
-        		"crimeType":"burglary",
-        		"crimeCount":"1000"
-        	},
-        	{
-        		"crimeType":"rape",
-        		"crimeCount":"1000"
-        	},
-        	{
-        		"crimeType":"accidents",
-        		"crimeCount":"1000"
-        	},
+      "crimes": [
+      	{
+      		"crimeType":"burglary",
+      		"crimeCount":"1000"
+      	},
+      	{
+      		"crimeType":"rape",
+      		"crimeCount":"1000"
+      	},
+      	{
+      		"crimeType":"accidents",
+      		"crimeCount":"1000"
+      	}
 
-        ]
+      ]
     },
 
     {
     	"city":"manchester",
     	"coords":["53.479167, -2.244167"],
-        "crimes": [
-        	{
-        		"crimeType":"burglary",
-        		"crimeCount":"1000"
-        	},
-        	{
-        		"crimeType":"rape",
-        		"crimeCount":"1000"
-        	},
-        	{
-        		"crimeType":"accidents",
-        		"crimeCount":"1000"
-        	},
+      "crimes": [
+      	{
+      		"crimeType":"burglary",
+      		"crimeCount":"1000"
+      	},
+      	{
+      		"crimeType":"rape",
+      		"crimeCount":"1000"
+      	},
+      	{
+      		"crimeType":"accidents",
+      		"crimeCount":"1000"
+      	}
 
-        ]
+      ]
     },
 
     {
     	"city":"london",
     	"coords":["51.508, -0.11"],
-        "crimes": [
-        	{
-        		"crimeType":"burglary",
-        		"crimeCount":"1000"
-        	},
-        	{
-        		"crimeType":"rape",
-        		"crimeCount":"1000"
-        	},
-        	{
-        		"crimeType":"accidents",
-        		"crimeCount":"1000"
-        	},
+      "crimes": [
+      	{
+      		"crimeType":"burglary",
+      		"crimeCount":"1000"
+      	},
+      	{
+      		"crimeType":"rape",
+      		"crimeCount":"1000"
+      	},
+      	{
+      		"crimeType":"accidents",
+      		"crimeCount":"1000"
+      	}
 
-        ]
+      ]
     },
 
     {
     	"city":"belfast",
     	"coords":["54.597, -5.93"],
-        "crimes": [
-        	{
-        		"crimeType":"burglary",
-        		"crimeCount":"1000"
-        	},
-        	{
-        		"crimeType":"rape",
-        		"crimeCount":"1000"
-        	},
-        	{
-        		"crimeType":"accidents",
-        		"crimeCount":"1000"
-        	},
+      "crimes": [
+      	{
+      		"crimeType":"burglary",
+      		"crimeCount":"1000"
+      	},
+      	{
+      		"crimeType":"rape",
+      		"crimeCount":"1000"
+      	},
+      	{
+      		"crimeType":"accidents",
+      		"crimeCount":"1000"
+      	}
 
-        ]
+      ]
     },
 
         {
@@ -95,11 +95,10 @@
         	{
         		"crimeType":"accidents",
         		"crimeCount":"1000"
-        	},
+        	}
 
         ]
     }
 
 
 ]}
-
