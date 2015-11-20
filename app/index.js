@@ -1,7 +1,7 @@
 express = require('express');
 app =  express();
+app.use('/assets', express.static(__dirname + '/views/assets'));
+app.use('/public', express.static(__dirname + '/views/static'));
 var Server = require('./server.js');
 var Routes = require('./routes.js');
-app.use('/assets', express.static('app/views/assets'));
-app.use('/public', express.static('app/views/static'));
 Server.startServer();
