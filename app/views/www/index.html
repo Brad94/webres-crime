@@ -3,11 +3,12 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="/assets/bootstrap/dist/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="/assets/leaflet/dist/leaflet.css" />
     <link rel="stylesheet" href="/public/style.css" media="screen" title="no title" charset="utf-8">
     <title>Crime Models</title>
   </head>
   <body>
-    <div class="container">
+    <div class="container-fluid">
       <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -30,8 +31,11 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-      <img id='map' src="/public/ukmap.jpg" alt="UK Map" />
+       <div id="map"></div>
+      <script src="/assets/jquery/dist/jquery.min.js" charset="utf-8"></script>
       <script src="/assets/bootstrap/dist/js/bootstrap.min.js" charset="utf-8"></script>
+      <script src="/assets/leaflet/dist/leaflet.js" charset="utf-8"></script>
+      <script src="/public/script.js" charset="utf-8"></script>
     </div>
   </body>
 </html>
