@@ -2,7 +2,7 @@
 	"cities": [
     {
     	"city":"portsmouth",
-    	"coords":["50.816667, -1.083333"],
+    	"coords":["50.816667", "-1.083333"],
       "crimes": [
       	{
       		"crimeType":"burglary",
@@ -22,7 +22,7 @@
 
     {
     	"city":"manchester",
-    	"coords":["53.479167, -2.244167"],
+    	"coords":["53.479167", "-2.244167"],
       "crimes": [
       	{
       		"crimeType":"burglary",
@@ -42,7 +42,7 @@
 
     {
     	"city":"london",
-    	"coords":["51.508, -0.11"],
+    	"coords":["51.508", "-0.11"],
       "crimes": [
       	{
       		"crimeType":"burglary",
@@ -62,7 +62,7 @@
 
     {
     	"city":"belfast",
-    	"coords":["54.597, -5.93"],
+    	"coords":["54.597", "-5.93"],
       "crimes": [
       	{
       		"crimeType":"burglary",
@@ -82,7 +82,7 @@
 
         {
     	"city":"glasgow",
-    	"coords":["55.858, -4.259"],
+    	"coords":["55.858", "-4.259"],
         "crimes": [
         	{
         		"crimeType":"burglary",
@@ -99,6 +99,4 @@
 
         ]
     }
-
-
 ]}

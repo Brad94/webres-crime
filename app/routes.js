@@ -7,13 +7,32 @@
 
       fs.readFile(__dirname + "/views/data/data.json", 'utf8', function(err, data) {
         if(err) {
-          console.log(err)
+          res.status(500).json({
+            'message': 'Could not read data file',
+            'err': err
+          });
         } else {
           var json = JSON.parse(data);
           res.render('index', json);
         }
       });
+    });
 
+    app.get('/data', function(req, res) {
+
+      fs.readFile(__dirname + '/views/data/data.json', 'utf8', function(err, data) {
+        if(err) {
+          res.status(500).json({
+            'message': 'Could not read data file',
+            'err': err
+          });
+        }
+
+        if(data) {
+          var json = JSON.parse(data);
+          res.status(200).json(json);
+        }
+      });
 
     });
 })();
