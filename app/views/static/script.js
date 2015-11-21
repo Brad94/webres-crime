@@ -60,8 +60,13 @@
 
     setupBuilder: function() {
       var addCrime = document.getElementById('addCrime');
+      var saveModel = document.getElementById('saveModel');
       addCrime.addEventListener('click', function() {
         events.addCrimeUI();
+      });
+
+      saveModel.addEventListener('click', function() {
+        events.saveModel();
       });
     },
 
@@ -88,8 +93,47 @@
       formGroup2.appendChild(crimeCountInput);
       builder.insertBefore(formGroup, button);
       builder.insertBefore(formGroup2, button);
+    },
+
+    saveModel: function() {
+      var modelName = document.getElementById('name').value;
+      var modelCity = document.getElementById('city').value;
+      var modelLong = document.getElementById('long').value;
+      var modelLat = document.getElementById('lat').value;
+      var crimes = document.getElementsByClassName('crimeName');
+      var counts = document.getElementsByClassName('crimeCount');
+      var modelCrimes = [];
+      for(var i=0; i<crimes.length; i++) {
+        var crime = {};
+        crime.crimeName = crimes[i].value;
+        crime.crimeCount = counts[i].value;
+        modelCrimes.push(crime);
+      }
+      var model = {
+        city: modelCity,
+        coords: [modelLong, modelLat],
+        crimes: modelCrimes
+      };
+
+      if(sessionStorage.getItem(modelName) === null) {
+        var mainModel = {
+          cities: [model]
+        };
+        sessionStorage.setItem(modelName, JSON.stringify(mainModel));
+      } else {
+        var savedModel = sessionStorage.getItem(modelName);
+        savedModel = JSON.parse(savedModel);
+        savedModel.cities.push(model);
+        sessionStorage.setItem(modelName, JSON.stringify(savedModel));
+      }
+
+      builder.reset();
+      var modelInput = document.getElementById('name');
+      modelInput.value = modelName;
+      modelInput.setAttribute('disabled', 'disabled');
     }
   }
+
   events.init();
 
 })();
