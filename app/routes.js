@@ -35,4 +35,8 @@
       });
 
     });
+
+    app.get('/build', function(req, res) {
+      res.render('createModel');
+    });
 })();
