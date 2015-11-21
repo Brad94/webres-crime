@@ -5,16 +5,16 @@
     	"coords":["50.816667", "-1.083333"],
       "crimes": [
       	{
-      		"crimeType":"burglary",
+      		"crimeType":"Burglary",
       		"crimeCount":"1000"
       	},
       	{
-      		"crimeType":"rape",
-      		"crimeCount":"1000"
+      		"crimeType":"Rape",
+      		"crimeCount":"800"
       	},
       	{
-      		"crimeType":"accidents",
-      		"crimeCount":"1000"
+      		"crimeType":"Accidents",
+      		"crimeCount":"2520"
       	}
 
       ]
@@ -25,16 +25,16 @@
     	"coords":["53.479167", "-2.244167"],
       "crimes": [
       	{
-      		"crimeType":"burglary",
-      		"crimeCount":"1000"
+      		"crimeType":"Burglary",
+      		"crimeCount":"12,000"
       	},
       	{
-      		"crimeType":"rape",
-      		"crimeCount":"1000"
+      		"crimeType":"Rape",
+      		"crimeCount":"11,000"
       	},
       	{
-      		"crimeType":"accidents",
-      		"crimeCount":"1000"
+      		"crimeType":"Accidents",
+      		"crimeCount":"13,000"
       	}
 
       ]
@@ -45,16 +45,16 @@
     	"coords":["51.508", "-0.11"],
       "crimes": [
       	{
-      		"crimeType":"burglary",
-      		"crimeCount":"1000"
+      		"crimeType":"Burglary",
+      		"crimeCount":"950"
       	},
       	{
-      		"crimeType":"rape",
-      		"crimeCount":"1000"
+      		"crimeType":"Rape",
+      		"crimeCount":"6000"
       	},
       	{
-      		"crimeType":"accidents",
-      		"crimeCount":"1000"
+      		"crimeType":"Accidents",
+      		"crimeCount":"9000"
       	}
 
       ]
@@ -65,16 +65,16 @@
     	"coords":["54.597", "-5.93"],
       "crimes": [
       	{
-      		"crimeType":"burglary",
-      		"crimeCount":"1000"
+      		"crimeType":"Burglary",
+      		"crimeCount":"22,000"
       	},
       	{
-      		"crimeType":"rape",
-      		"crimeCount":"1000"
+      		"crimeType":"Rape",
+      		"crimeCount":"17,000"
       	},
       	{
-      		"crimeType":"accidents",
-      		"crimeCount":"1000"
+      		"crimeType":"Accidents",
+      		"crimeCount":"13,000"
       	}
 
       ]
@@ -85,16 +85,16 @@
     	"coords":["55.858", "-4.259"],
         "crimes": [
         	{
-        		"crimeType":"burglary",
-        		"crimeCount":"1000"
+        		"crimeType":"Burglary",
+        		"crimeCount":"9000"
         	},
         	{
-        		"crimeType":"rape",
-        		"crimeCount":"1000"
+        		"crimeType":"Rape",
+        		"crimeCount":"6000"
         	},
         	{
-        		"crimeType":"accidents",
-        		"crimeCount":"1000"
+        		"crimeType":"Accidents",
+        		"crimeCount":"21,000"
         	}
 
         ]
