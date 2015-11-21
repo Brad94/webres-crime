@@ -41,6 +41,15 @@
           fillColor: '#f03',
           fillOpacity: 0.5
         }).addTo(map);
+        var crimes = data.cities[i].crimes;
+        var popUpString = "Crimes: <br /> ";
+
+        for(var j=0; j<crimes.length; j++) {
+          var crime = crimes[j];
+          popUpString = popUpString + crime.crimeType + ": " + crime.crimeCount + "<br /> ";
+        }
+
+        circle.bindPopup(popUpString)
       }
     }
   }
