@@ -1,7 +1,12 @@
 (function() {
   var events = {
     init: function() {
-      this.loadMap();
+      var builder = document.getElementById('builder');
+      if(builder) {
+        this.setupBuilder();
+      } else {
+        this.loadMap();
+      }
     },
 
     loadMap: function() {
@@ -51,6 +56,36 @@
 
         circle.bindPopup(popUpString)
       }
+    },
+
+    setupBuilder: function() {
+      var addCrime = document.getElementById('addCrime');
+      addCrime.addEventListener('click', function() {
+        events.addCrimeUI();
+      });
+    },
+
+    addCrimeUI: function() {
+      var formGroup = document.createElement('div');
+      var crimeLabel = document.createElement('label');
+      var crimeLabelText = document.createTextNode('Crime');
+      var crimeInput = document.createElement('input');
+      var crimeCountLabel = document.createElement('label');
+      var crimeCountLabelText = document.createTextNode('Crime Count');
+      var crimeCountInput = document.createElement('input');
+      var button = document.getElementById('addCrime');
+      var builder = document.getElementById('builder');
+      formGroup.setAttribute('class', "form-group");
+      crimeInput.setAttribute('class', 'form-control crimeName');
+      crimeCountInput.setAttribute('class', 'form-control crimeCount');
+      crimeLabel.appendChild(crimeLabelText);
+      crimeCountLabel.appendChild(crimeCountLabelText);
+      formGroup.appendChild(crimeLabel);
+      formGroup.appendChild(crimeInput);
+      formGroup.appendChild(crimeCountLabel);
+      formGroup.appendChild(crimeCountInput);
+      builder.insertBefore(formGroup, button);
+
     }
   }
   events.init();
