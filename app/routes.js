@@ -39,4 +39,17 @@
     app.get('/build', function(req, res) {
       res.render('createModel');
     });
+
+    app.post('/build/write', function(req, res) {
+      var json = req.body;
+      var fileData = JSON.stringify(json.data);
+      var path = __dirname + "/views/data/" + json.fileName;
+      fs.writeFile(path, fileData, 'utf8', function(err) {
+        if(err) {
+          res.status(500),json(err);
+        } else {
+          res.status(200);
+        }
+      });
+    });
 })();
