@@ -48,7 +48,7 @@
         if(err) {
           res.status(500),json(err);
         } else {
-          res.status(200);
+          res.sendStatus(200);
         }
       });
     });

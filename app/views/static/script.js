@@ -156,7 +156,8 @@
       var xhr = new XMLHttpRequest();
       xhr.addEventListener('load', function() {
         if(xhr.status === 200) {
-          document.location.href = '/';
+          window.location.href = '/';
+          sessionStorage.removeItem(modelName);
         } else {
           alert('Model could not be saved.');
         }
