@@ -19,26 +19,6 @@
       });
     });
 
-    app.get('/data', function(req, res) {
-      fs.readFile(__dirname + '/views/data/data.json', 'utf8', function(err, data) {
-        if(err) {
-          res.status(500).json({
-            'message': 'Could not read data file',
-            'err': err
-          });
-        }
-
-        if(data) {
-          var json = JSON.parse(data);
-          res.status(200).json(json);
-        }
-      });
-    });
-
-    app.get('/models', function(req, res) {
-
-    });
-
     app.get('/models/read/:model', function(req, res) {
       var file = req.params.model;
       var basePath = __dirname + '/views/data/';
