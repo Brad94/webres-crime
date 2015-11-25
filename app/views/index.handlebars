@@ -1,1 +1,17 @@
-<div id="map"></div>
+<div class="row">
+  <div class="col-xs-12">
+    <form class="form-inline pull-right">
+      <select class="form-control" id='model'>
+        <option value="">Default</option>
+        {{#each files}}
+          <option value="{{this}}">{{this}}</option>
+        {{/each}}
+      </select>
+    </form>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <div id="map"></div>
+  </div>
+</div>

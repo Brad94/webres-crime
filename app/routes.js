@@ -1,22 +1,25 @@
 (function() {
     var fs = require('fs');
-    app.get('/', function(req, res) {
 
-      fs.readFile(__dirname + "/views/data/data.json", 'utf8', function(err, data) {
+    app.get('/', function(req, res) {
+      fs.readdir(__dirname + '/views/data', function(err, data) {
         if(err) {
           res.status(500).json({
-            'message': 'Could not read data file',
+            'message': 'Could not read directory',
             'err': err
           });
-        } else {
-          var json = JSON.parse(data);
+        }
+
+        if(data) {
+          var json = {
+            files: data
+          };
           res.render('index', json);
         }
       });
     });
 
     app.get('/data', function(req, res) {
-
       fs.readFile(__dirname + '/views/data/data.json', 'utf8', function(err, data) {
         if(err) {
           res.status(500).json({
@@ -30,22 +33,25 @@
           res.status(200).json(json);
         }
       });
-
     });
 
     app.get('/models', function(req, res) {
-      fs.readdir(__dirname + '/views/data', function(err, data) {
+
+    });
+
+    app.get('/models/read/:model', function(req, res) {
+      var file = req.params.model;
+      var basePath = __dirname + '/views/data/';
+      fs.readFile(basePath + file, 'utf8', function(err, data) {
         if(err) {
           res.status(500).json({
-            'message': 'Could not read directory',
+            'message': 'Could not read model',
             'err': err
           });
         }
 
         if(data) {
-          var json = {
-            files: data
-          };
+          var json = JSON.parse(data);
           res.status(200).json(json);
         }
       })
