@@ -26,21 +26,18 @@
     },
 
     loadModel: function(model) {
-      if(model === '') {
-        map.remove();
-        this.loadMap();
-      } else {
-        var xhr = new XMLHttpRequest();
-        xhr.addEventListener('load', function() {
-          if(xhr.status === 200) {
-            var json = JSON.parse(xhr.responseText);
-            events.plotData(json);
-          }
-        });
+      map.remove();
+      this.loadMap();
+      var xhr = new XMLHttpRequest();
+      xhr.addEventListener('load', function() {
+        if(xhr.status === 200) {
+          var json = JSON.parse(xhr.responseText);
+          events.plotData(json);
+        }
+      });
 
-        xhr.open('GET', '/models/read/' + model);
-        xhr.send();
-      }
+      xhr.open('GET', '/models/read/' + model);
+      xhr.send();
 
     },
 
