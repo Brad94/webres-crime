@@ -62,7 +62,7 @@
 
         for(var j=0; j<crimes.length; j++) {
           var crime = crimes[j];
-          popUpString = popUpString + crime.crimeType + ": " + crime.crimeCount + "<br /> ";
+          popUpString = popUpString + crime.crimeName + ": " + crime.crimeCount + "<br /> ";
         }
 
         circle.bindPopup(popUpString)
@@ -131,7 +131,7 @@
       var model = {
         // Build a new city object with crimes
         city: modelCity,
-        coords: [modelLong, modelLat],
+        coords: [modelLat, modelLong],
         crimes: modelCrimes
       };
 
