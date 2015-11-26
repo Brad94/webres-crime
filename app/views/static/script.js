@@ -1,12 +1,16 @@
 (function() {
-  var map = '';
+  var map = ''; // Global Map Object
   var events = {
+    // Events Object - This contains all needed functionality for the front end
     init: function() {
+      // Setup event listeners and functionality
       var builder = document.getElementById('builder');
       var modelSelect = document.getElementById('model');
       if(builder) {
+        // On model builder page - Run events
         this.setupBuilder();
       } else {
+        // On a model display page initialize leaflet and set up model dropdown
         this.loadMap();
         modelSelect.addEventListener('change', function(e) {
           events.loadModel(e.target.value);
@@ -15,6 +19,8 @@
     },
 
     loadMap: function() {
+      // Initialize a clean leaflet map with no plotted data
+      // Map defaults to UK
       map = L.map('map').setView([51.505, -0.09], 5);
       L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
@@ -26,11 +32,13 @@
     },
 
     loadModel: function(model) {
-      map.remove();
+      map.remove(); // Clean up any previous model and load a fresh map
       this.loadMap();
+      // AJAX request to read file data
       var xhr = new XMLHttpRequest();
       xhr.addEventListener('load', function() {
         if(xhr.status === 200) {
+          // Data received - Plot data
           var json = JSON.parse(xhr.responseText);
           events.plotData(json);
         }
@@ -43,26 +51,30 @@
 
     plotData: function(data) {
       for(var i=0; i<data.cities.length; i++) {
-        var coords = data.cities[i].coords;
-        var parsedCoords = [];
+        // Loop through each city in the model
+        var coords = data.cities[i].coords; // Get city coords for leaflet JS
+        var parsedCoords = []; // Array for new parsed coordinates
         for(var j=0; j<coords.length; j++) {
+          // Loop through array of coords for a given city
             var coord = coords[j];
-            parsedCoords.push(parseFloat(coord));
+            parsedCoords.push(parseFloat(coord)); // Convert from String to Float and push to new array
         }
-        var circle = L.circle(coords, 20000, {
+        var circle = L.circle(parsedCoords, 20000, {
+          // Create a highlighted circle at the given coordinates
           color: 'red',
           fillColor: '#f03',
           fillOpacity: 0.5
         }).addTo(map);
-        var crimes = data.cities[i].crimes;
-        var popUpString = "Crimes: <br /> ";
+        var crimes = data.cities[i].crimes; // Get each crime array for a given city
+        var popUpString = "Crimes: <br /> "; // Create the pop up string
 
         for(var j=0; j<crimes.length; j++) {
+          // Loop through each crime and add to the pop up string
           var crime = crimes[j];
           popUpString = popUpString + crime.crimeName + ": " + crime.crimeCount + "<br /> ";
         }
 
-        circle.bindPopup(popUpString)
+        circle.bindPopup(popUpString); // Bind the popup to the created Circle
       }
     },
 
@@ -85,7 +97,7 @@
     },
 
     addCrimeUI: function() {
-      // Adds another Crime Control with correct elements
+      // Adds another Crime Control with correct elements. Done on click of add city
       var formGroup = document.createElement('div');
       var formGroup2 = document.createElement('div');
       var crimeLabel = document.createElement('label');
@@ -112,6 +124,7 @@
 
     saveModel: function() {
       // Saves current model to session
+      // Model Values
       var modelName = document.getElementById('name').value.toLowerCase();
       var modelCity = document.getElementById('city').value;
       var modelLong = document.getElementById('long').value;
@@ -133,13 +146,13 @@
       };
 
       if(sessionStorage.getItem(modelName) === null) {
-        // Store new model
+        // Store new model in session storage if model with given key does not exist
         var mainModel = {
           cities: [model]
         };
         sessionStorage.setItem(modelName, JSON.stringify(mainModel));
       } else {
-        // Add to existing
+        // Add to existing model within session storage
         var savedModel = sessionStorage.getItem(modelName);
         savedModel = JSON.parse(savedModel);
         savedModel.cities.push(model);
@@ -154,6 +167,8 @@
     },
 
     buildModel: function() {
+      // Retreives a now completed model from session storage and posts to server
+      // side write endpoint as AJAX request
       var modelName = document.getElementById('name').value.toLowerCase();
       var newModel = sessionStorage.getItem(modelName);
       var json = JSON.parse(newModel);
@@ -177,6 +192,6 @@
     }
   }
 
-  events.init();
+  events.init(); // Initialize front end application
 
 })();
