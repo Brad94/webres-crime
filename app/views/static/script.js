@@ -66,7 +66,7 @@
           fillOpacity: 0.5
         }).addTo(map);
         var crimes = data.cities[i].crimes; // Get each crime array for a given city
-        var popUpString = "Crimes: <br /> "; // Create the pop up string
+        var popUpString = "City: " + data.cities[i].city + "<br /> Crimes: <br /> "; // Create the pop up string
 
         for(var j=0; j<crimes.length; j++) {
           // Loop through each crime and add to the pop up string
